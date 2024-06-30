@@ -21,5 +21,5 @@ Bu proje, Discord sunucunuzda "vanity role" yani durum rol sistemi kullanmanız�
 
 - Discord: [X](https://discord.gg/FcUwaJZRSS) veya [XRongo](https://discord.com/users/592442056115486723)
 - Email: [xrongo.iletisim@gmail.com](mailto:xrongo.iletisim@gmail.com)
-```
+---
 © 2024 Discord Vanity Role Projesi. Tüm hakları saklıdır.
