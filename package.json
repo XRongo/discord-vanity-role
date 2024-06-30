@@ -1,15 +1,22 @@
 {
-  "name": "vanity-role-system",
+  "name": "discord-vanity-role",
   "version": "1.0.0",
-  "description": "Discord vanity role system",
+  "description": "Bu proje, Discord sunucunuzda vanity role yani durum rol sistemi kullanmanızı sağlayan bir sistemdir. ayarlar.js dosyasını doldurarak ve bazı kurulum adımlarını tamamlayarak bu sistemi sunucunuzda aktif edebilirsiniz.",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node ."
   },
   "author": "XRongo",
   "license": "MIT",
+  "keywords": [
+    "discord",
+    "discord.js",
+    "discord bot",
+    "bot",
+    "V14"
+  ],
   "dependencies": {
-    "advanced-logs": "^2.1.3",
+    "chalk": "^4.1.2",
     "discord.js": "^14.15.3"
   }
 }
