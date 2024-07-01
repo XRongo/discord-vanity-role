@@ -11,11 +11,11 @@ module.exports = {
         const ROL_ID = ayarlar.url_rol_sistemi.rol_id
         const SUNUCU_ID = ayarlar.url_rol_sistemi.sunucu_id
         const KANAL_ID = ayarlar.url_rol_sistemi.kanal_id
-        const YAZI = ayarlar.url_rol_sistemi.yazı
+        const YAZILAR = ayarlar.url_rol_sistemi.yazılar
         const ROL = await newPresence.guild.roles.fetch(ROL_ID).catch(() => null)
         const LOG_KANALI = await newPresence.guild.channels.fetch(KANAL_ID).catch(() => null)
 
-        if (ROL_ID.length < 0 || SUNUCU_ID.length < 0 || KANAL_ID.length < 0 || YAZI.length < 0) return client.error('[VANITY ROLE SYSTEM] Ayarlar dosyasında eksiklik var. Lütfen kontrol edin.');
+        if (ROL_ID.length < 0 || SUNUCU_ID.length < 0 || KANAL_ID.length < 0 || YAZILAR.length < 0 || YAZILAR[0].length < 0) return client.error('[VANITY ROLE SYSTEM] Ayarlar dosyasında eksiklik var. Lütfen kontrol edin.');
 
         if (newPresence.guild.id !== SUNUCU_ID) return;
 
@@ -36,15 +36,15 @@ module.exports = {
             if (!newPresence.member.roles.cache.has(ROL_ID)) return;
             await vanityRole(newPresence.member, false)
         }
-        if (newPresence.activities.some((AKTİVİTE) => AKTİVİTE.type === 4 && AKTİVİTE.state && AKTİVİTE.state === YAZI) && !newPresence.member.roles.cache.has(ROL_ID)) {
+        if (newPresence.activities.some((AKTİVİTE) => AKTİVİTE.type === 4 && AKTİVİTE.state && YAZILAR.includes(AKTİVİTE.state)) && !newPresence.member.roles.cache.has(ROL_ID)) {
             if (newPresence.member.roles.cache.has(ROL_ID)) return;
             await vanityRole(newPresence.member, true)
         } else {
-            if (!newPresence.activities.some((AKTİVİTE) => AKTİVİTE.type === 4 && AKTİVİTE.state && AKTİVİTE.state === YAZI) && newPresence.member.roles.cache.has(ROL_ID)) {
+            if (!newPresence.activities.some((AKTİVİTE) => AKTİVİTE.type === 4 && AKTİVİTE.state && YAZILAR.includes(AKTİVİTE.state)) && newPresence.member.roles.cache.has(ROL_ID)) {
                 if (newPresence.status === 'offline' || newPresence.status === 'invisible') {
                     await vanityRole(newPresence.member, false)
                 }
-                if (!newPresence.activities.some((AKTİVİTE) => AKTİVİTE.type === 4 && AKTİVİTE.state && AKTİVİTE.state === YAZI)) {
+                if (!newPresence.activities.some((AKTİVİTE) => AKTİVİTE.type === 4 && AKTİVİTE.state && YAZILAR.includes(AKTİVİTE.state))) {
                     await vanityRole(newPresence.member, false)
                 }
             }
