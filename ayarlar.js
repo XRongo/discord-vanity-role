@@ -7,6 +7,6 @@ module.exports = {
         rol_id: "", // Duruma yazıyı yazınca verilecek rolün ID'si
         sunucu_id: "", // Sistemi Kullanacağınız Sunucunun ID'si
         kanal_id: "", // Log Kanalının ID'si
-        yazı: "" // Rolün verilmesi için duruma yazılması gereken yazı
+        yazılar: [""] // Rolün verilmesi için duruma yazılması gereken yazı
     }
 }
